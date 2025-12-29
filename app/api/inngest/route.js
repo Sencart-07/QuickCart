@@ -1,8 +1,9 @@
+import { inngest } from "@/config/inngest";
+import { syncUserCreation, syncUserupdation, syncUserDeletion } from "@/config/functions";
 import { serve } from "inngest/next";
-import { inngest, syncUserCreation, syncUserDeletion, syncUserupdation } from "@/config/inngest";
 
-// Create an API that serves zero functions
-export const { GET, POST, PUT } = serve({
+// Default export is required for Next.js 16 Turbopack compatibility
+export default serve({
   client: inngest,
   functions: [
     syncUserCreation,
